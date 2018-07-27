@@ -1,0 +1,109 @@
+.container {
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.head {
+  float: left;
+}
+
+.search {
+  margin-top: 40px;
+  float: right;
+}
+
+.table {
+  width: 900px;
+  margin: 0 auto; 
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.table th:last-child,
+.table tr td:last-child {
+  width: 200px;
+}
+
+.table thead:first-child {
+  background-color: rgb(150, 150, 150);
+}
+
+.table thead th {
+  font-weight: normal;
+}
+
+th, td, th button {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: black;
+  padding: 10px;
+}
+
+th button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+th button:focus {
+  text-decoration: underline;
+}
+
+.disabled-row {
+  background-color: rgb(204, 204, 204);
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.button-details {
+  background-color: transparent;
+}
+
+.button-edit {
+  background-color:#fffb00;
+}
+
+.button-delete {
+  background-color: salmon;
+}
+
+.nobook-message {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.change-page {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.change-page button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+.book-details {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 800px;
+}
+
+.book-details img {
+  float: left;
+  width: 30%;
+  margin-right: 30px;
+}
+
+.book-info div {
+  margin: 20px;
+}

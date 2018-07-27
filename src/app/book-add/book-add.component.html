@@ -1,0 +1,19 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-add">
+  <input type="file" id="fileInput" [formControl]="form.controls['file']" #fileInput placeholder="Uploading file" accept=".jpg, .png">
+  <input type="text" id="authorInput" placeholder="author" [formControl]="form.controls['author']">
+  <input type="text" id="titleInput" placeholder="Title" [formControl]="form.controls['title']">
+  <textarea id="descInput" [formControl]="form.controls['description']" rows="10">Description...</textarea>
+  <input type="number" id="ratingInput" [formControl]="form.controls['rating']" placeholder="Number from 1 to 5">
+  <select name="status" id="statusInput" [formControl]="form.controls['status']">
+    <option value="true">true</option>
+    <option value="false">false</option>
+  </select>
+  <b *ngIf="!form.valid" class="error-msg">Fill all fields to submit...</b>
+  <div *ngIf="!form.controls['file'].valid" class="error-msg">File field is invalid</div>
+  <div *ngIf="!form.controls['author'].valid" class="error-msg">Author field is invalid</div>
+  <div *ngIf="!form.controls['description'].valid" class="error-msg">Description field is invalid</div>
+  <div *ngIf="!form.controls['title'].valid" class="error-msg">Title field is invalid</div>
+  <div *ngIf="!form.controls['rating'].valid" class="error-msg">Rating field is invalid</div>
+  <div *ngIf="!form.controls['status'].valid" class="error-msg">Status field is invalid</div>
+  <button *ngIf="form.valid" type="submit">Submit</button>
+</form>

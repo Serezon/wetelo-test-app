@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <form class="signin" (ngSubmit)="login()" #loginForm="ngForm">
+    <label for="inputEmail" class="signin__label">Email</label>
+    <input type="email" class="signin__input" placeholder="Email address" [(ngModel)]="loginData.email" name="email" required/>
+    <label for="inputPassword" class="signin__label">Password</label>
+    <input type="password" class="signin__input" placeholder="Password" [(ngModel)]="loginData.password" name="password" required/>
+    <button class="signin__btn" type="submit" [disabled]="!loginForm.form.valid">Sign in</button>
+    <p>
+      Not a member?
+      <a [routerLink]="['/signup']">Signup here</a>
+    </p>
+  </form>
+</div>

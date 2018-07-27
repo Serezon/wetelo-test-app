@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <app-login *ngIf="this.router.url != '/signup' || !authService.isLoggedIn() && this.router.url != '/signup'"></app-login> -->
+<nav *ngIf="authService.isLoggedIn()" class="nav">
+  <div class="nav__links">
+    <a [routerLink]="'/books'" routerLinkActive="current-route">Books</a>
+    <a [routerLink]="'/add'" routerLinkActive="current-route">Add</a>
+    <a [routerLink]="'/edit'" routerLinkActive="current-route">Edit</a>
+  </div>
+  <div>
+    <span class="nav__email">{{authService.getEmail()}}</span>
+    <button (click)="authService.logout()">Logout</button>
+  </div>
+</nav>
+<router-outlet></router-outlet>

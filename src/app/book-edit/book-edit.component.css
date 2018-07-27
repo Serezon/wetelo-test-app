@@ -1,0 +1,32 @@
+.form-add {
+  padding-top: 50px;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.form-add * {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  border: 2px solid #000;
+}
+
+#descInput {
+  width: 100%;
+}
+
+.error-msg {
+  display: block;
+  background-color: rgb(240, 157, 157);
+  border-radius: 10px;
+  margin-top: -10px;
+  text-align: center;
+}
+
+#ratingInput {
+  width: 150px;
+}

@@ -1,0 +1,63 @@
+<div class="container">
+  <h1 class="head">Books
+  </h1>
+  <div class="search">
+    <input type="search" #searchParam name="search" placeholder="search" (keyup.enter)="addSearchParam(searchParam.value)">
+    <button (click)="addSearchParam(searchParam.value)">GO</button>
+  </div>
+
+
+  <div class="change-page">
+    <button (click)="changePage(-1)">&#8592; Previous page</button>
+    <button (click)="changePage(1)">Next page &#8594;</button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>
+          <button (click)="addSortBy('author')"> Author </button>
+        </th>
+        <th>
+          <button (click)="addSortBy('title')"> Title </button>
+        </th>
+        <th>
+          <button (click)="addSortBy('rating')"> Rating </button>
+        </th>
+        <th>
+          <button (click)="addSortBy('status')"> Status </button>
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books" [class.disabled-row]="!book.status">
+        <td>{{ book.id }}</td>
+        <td>{{ book.author }}</td>
+        <td (click)="showDetails(book.id)" style="cursor: pointer;">{{ book.title }}</td>
+        <td>{{ getStars(book.rating) }}</td>
+        <!-- Making book grey depending on status -->
+        <td>{{ book.status ? 'ON' : 'OFF' }}</td>
+        <td>
+          <button class="button button-edit" (click)="editBook(book.id)">Edit</button>
+          <button class="button button-delete" (click)="deleteBook(book._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="this.books.length == 0 || false" class="nobook-message">There's no book on this page</div>
+
+  <div class="book-details" *ngIf="this.bookSelected">
+    <img [src]="currentBook.file" alt="Book image">
+    <div class="book-info">
+      <h3> {{ currentBook.author + " - " + currentBook.title }} </h3>
+      <div> {{ getStars(currentBook.rating) }} </div>
+      <div> {{ currentBook.description }} </div>
+    </div>
+  </div>
+
+</div>
